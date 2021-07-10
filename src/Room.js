@@ -1,24 +1,21 @@
 
 import React, { useState } from 'react';
+import './Room.css';
 
 function Room() {
-   let [isLit, setLit] = useState(false);
-   let [isAge, setAge] = useState(33);
-    
+    let [temp, setTemp] = useState(22);
+    let [islit, setLit] = useState(true);
   return (
-   <div>
-        This room is {isLit? "lit": "dark"}
-        <br/>
-        <button onClick={()=> setLit(!isLit)} >Turn Light {isLit? "OFF" : "ON"}</button>
-        <br/><br/>
-
-        Age is {isAge}<br/>
-        <button onClick={() => {
-                console.log("Age Increased");
-                setAge(++isAge);}} >
-                Increase Age
-        </button>
-        <br/>
+   <div className = {`room ${islit? "lit": "dark"}`}>
+       The room is {islit}
+       <br/>
+       <button onClick = {()=>setLit(true)} >ON</button>
+       <button onClick = {()=>setLit(false)} >OFF</button>   
+       <br/><br/>
+       The temperature is {temp}C
+       <br/>
+       <button onClick = {()=>setTemp(++temp)} >+</button>
+       <button onClick = {()=>setTemp(--temp)} >-</button>
    </div>
   );
 }
