@@ -7,10 +7,10 @@ function Room() {
     let [islit, setLit] = useState(true);
   return (
    <div className = {`room ${islit? "lit": "dark"}`}>
-       The room is {islit}
+       The room is {islit? "lit": "dark"}
        <br/>
-       <button onClick = {()=>setLit(true)} >ON</button>
-       <button onClick = {()=>setLit(false)} >OFF</button>   
+       <button onClick = {()=>setLit(true)} >Turn the light ON</button>
+       <button onClick = {()=>setLit(false)} >Turn the light OFF</button>   
        <br/><br/>
        The temperature is {temp}C
        <br/>
